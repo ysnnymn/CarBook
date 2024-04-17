@@ -1,4 +1,5 @@
 ﻿using CarBook.Application.Features.CQRS.Commands.CarCommands;
+using CarBook.Application.Features.CQRS.Commands.CategoryCommands;
 using CarBook.Application.Interfaces;
 using CarBook.Domain.Entities;
 using System;
@@ -22,5 +23,7 @@ namespace CarBook.Application.Features.CQRS.Handlers.CarHandlers
             var value=await _repository.GetByIdAsync(command.Id);
             await _repository.RemoveAsync(value);
         }
+
+       
     }
 }
