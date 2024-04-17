@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBook.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    [Migration("20240413170305_mig1")]
+    [Migration("20240415173710_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -111,9 +111,6 @@ namespace CarBook.Persistence.Migrations
                     b.Property<int>("BrandID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CarID1")
-                        .HasColumnType("int");
-
                     b.Property<string>("CoverImageURl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -146,8 +143,6 @@ namespace CarBook.Persistence.Migrations
                     b.HasKey("CarID");
 
                     b.HasIndex("BrandID");
-
-                    b.HasIndex("CarID1");
 
                     b.ToTable("Cars");
                 });
@@ -211,7 +206,7 @@ namespace CarBook.Persistence.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("CarId")
+                    b.Property<int>("CarID")
                         .HasColumnType("int");
 
                     b.Property<int>("PricingID")
@@ -219,7 +214,7 @@ namespace CarBook.Persistence.Migrations
 
                     b.HasKey("CarPricingID");
 
-                    b.HasIndex("CarId");
+                    b.HasIndex("CarID");
 
                     b.HasIndex("PricingID");
 
@@ -442,10 +437,6 @@ namespace CarBook.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CarBook.Domain.Entities.Car", null)
-                        .WithMany("Cars")
-                        .HasForeignKey("CarID1");
-
                     b.Navigation("Brand");
                 });
 
@@ -483,7 +474,7 @@ namespace CarBook.Persistence.Migrations
                 {
                     b.HasOne("CarBook.Domain.Entities.Car", "Car")
                         .WithMany("CarPricings")
-                        .HasForeignKey("CarId")
+                        .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -505,8 +496,6 @@ namespace CarBook.Persistence.Migrations
                     b.Navigation("CarFeatures");
 
                     b.Navigation("CarPricings");
-
-                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("CarBook.Domain.Entities.Feature", b =>
