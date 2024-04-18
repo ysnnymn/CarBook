@@ -14,6 +14,7 @@ using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
+using CarBook.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<CarBookContext, CarBookContext>();
@@ -59,6 +60,9 @@ builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+builder.Services.AddApplicationService(builder.Configuration);
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
