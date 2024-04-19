@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Features.Mediator.Results.FotterAddress;
+﻿
+using CarBook.Application.Features.Mediator.Results.FotterAddressResult;
 using MediatR;
 using System;
 using System.Collections.Generic;

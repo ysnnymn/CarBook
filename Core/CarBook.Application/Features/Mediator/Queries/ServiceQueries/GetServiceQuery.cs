@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Queries.ServiceQueries
 {
-    public class GetServiceQuery:IRequest<List<GetServiceByIdQueryResult>>
+    public class GetServiceQuery:IRequest<List<GetServiceQueryResult>>
     {
     }
 }

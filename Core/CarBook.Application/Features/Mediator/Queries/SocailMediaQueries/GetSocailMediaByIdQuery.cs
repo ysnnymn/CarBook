@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Features.Mediator.Queries.SocialMediaQueries
+namespace CarBook.Application.Features.Mediator.Queries.SocailMediaQueries
 {
-    public class GetSocialMediaByIdQuery:IRequest<GetSocailMediaByIdQueryResult>
+    public class GetSocailMediaByIdQuery:IRequest<GetSocailMediaByIdQueryResult>
     {
         public int Id { get; set; }
 
-        public GetSocialMediaByIdQuery(int id)
+        public GetSocailMediaByIdQuery(int id)
         {
             Id = id;
         }

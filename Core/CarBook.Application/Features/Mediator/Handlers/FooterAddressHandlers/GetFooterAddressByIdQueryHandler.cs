@@ -1,5 +1,7 @@
 ﻿using CarBook.Application.Features.Mediator.Queries.FooterAddress;
-using CarBook.Application.Features.Mediator.Results.FotterAddress;
+using CarBook.Application.Features.Mediator.Queries.FooterAddressQueries;
+
+using CarBook.Application.Features.Mediator.Results.FotterAddressResult;
 using CarBook.Application.Interfaces;
 using CarBook.Domain.Entities;
 using MediatR;
