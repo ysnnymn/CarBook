@@ -62,6 +62,8 @@ builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
 
+
+
 builder.Services.AddApplicationService(builder.Configuration);
 
 
