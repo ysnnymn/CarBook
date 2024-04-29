@@ -67,7 +67,7 @@ namespace CarBook.WebApi.Controllers
             return Ok(values);
 
         }
-        [HttpGet("GetLast5CarsWithBrands")]
+        [HttpGet("GetLast5CarsWithBrandQueryHandler")]
         public IActionResult GetLast5CarsWithBrands()
         {
             var values = _getLast5CarsWithBrandQueryHandler.Handle();

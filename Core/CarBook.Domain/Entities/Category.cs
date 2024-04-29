@@ -10,5 +10,7 @@ namespace CarBook.Domain.Entities
     {
         public int CategoryID { get; set; }
         public string Details { get; set; }
+        public List<Blog> Blog { get; set; }
+
     }
 }
