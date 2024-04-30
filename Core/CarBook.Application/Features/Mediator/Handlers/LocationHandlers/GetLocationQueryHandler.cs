@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Handlers.LocationHandlers
 {
-    public class GetBlogQueryHandler : IRequestHandler<GetLocationQuery, List<GetLocationQueryResult>>
+    public class GetBlogQueryHandler : 
+        IRequestHandler<GetLocationQuery, List<GetLocationQueryResult>>
     {
         private readonly IRepository<Location> _repository;
 
