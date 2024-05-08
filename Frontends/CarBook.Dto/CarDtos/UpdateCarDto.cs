@@ -11,6 +11,7 @@ namespace CarBook.Dto.CarDtos
         public int CarId { get; set; }
         public int BrandID { get; set; }
         public string Model { get; set; }
+        public string Name { get; set; }
         public string CoverImageURl { get; set; }
         public int Km { get; set; }
         public string Transmission { get; set; }

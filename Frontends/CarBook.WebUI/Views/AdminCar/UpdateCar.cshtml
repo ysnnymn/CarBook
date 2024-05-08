@@ -1,6 +1,6 @@
-﻿@model CreateCarDto
+﻿@model UpdateCarDto
 @{
-    ViewData["Title"] = "CreateCar";
+    ViewData["Title"] = "UpdateCar";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -13,10 +13,11 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Yeni Araç Girişi</h4>
+                        <h4 class="card-title">Araç Güncelleme Sayfası</h4>
                         <p class="card-subtitle mb-4">Araç ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir.</p>
 
                         <form method="post">
+                            <input type="hidden" asp-for="CarId" />
                             <div class="form-group">
                                 <label for="exampleInputBrand">Marka</label>
 
@@ -70,7 +71,7 @@
                                 <input type="text" class="form-control" id="exampleInputBigImageUrl" asp-for="BigImageUrl" placeholder="Fotoğraf Giriniz">
                             </div>
 
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Aracı Kaydet</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Aracı Güncelle</button>
                         </form>
 
                     </div> <!-- end card-body-->
