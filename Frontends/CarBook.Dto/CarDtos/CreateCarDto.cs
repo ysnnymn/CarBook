@@ -8,6 +8,7 @@ namespace CarBook.Dto.CarDtos
 {
     public class CreateCarDto
     {
+
         public int BrandID { get; set; }
         public string Model { get; set; }
         public string Name { get; set; }

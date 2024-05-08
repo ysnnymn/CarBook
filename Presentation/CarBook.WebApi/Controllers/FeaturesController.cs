@@ -25,7 +25,7 @@ namespace CarBook.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFeature(int id)
         {
-            var value=_mediator.Send(new GetFeatureByIdQuery(id));
+            var value= await _mediator.Send(new GetFeatureByIdQuery(id));
             return Ok(value);
         }
         [HttpPost]
@@ -34,7 +34,7 @@ namespace CarBook.WebApi.Controllers
             await _mediator.Send(command);
             return Ok("Özellik Başarıyla Eklendi.");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveFeature(int id)
         {
             await _mediator.Send(new RemoveFeatureCommand(id));

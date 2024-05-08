@@ -1,4 +1,4 @@
-﻿@model List<ResultCarWithBrandDtos>
+﻿@model List<ResultCarWithBrandDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -8,14 +8,14 @@
 <div class="page-content">
     <div class="container-fluid">
 
+        <!-- start page title -->
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Araba Listesi</h4>
                         <p class="card-subtitle mb-4">
-                            Arabalar İle İlgili Ekleme,Silme ,Güncelleme ve Listeleme İşlemleri Bu Sayfadan Gerçekleştirilebilir. 
-                          
+                          Arabalarla ilgili ekleme, silme, güncelleme, arama ve listeleme gibi işlemleri bu sayfa üzerinden gerçekleştirebilirsiniz.
                         </p>
                         <div class="table-responsive">
                             <table class="table mb-0">
@@ -30,26 +30,25 @@
                                         <th>Güncelle</th>
                                         <th>Detaylar</th>
                                         <th>Sitede Gör</th>
+                                        <th>Fiyat Bilgileri</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model)
-                                    {
+                                    @foreach(var item in Model){
                                         count++;
-                                        <tr>
-                                            <th scope="row">@count</th>
-                                            <td>@item.BrandName</td>
-                                            <td>@item.Model</td>
-                                            <td>@item.Transmission</td>
-                                            <td>@item.Km</td>
-                                            <td><a href="/AdminCar/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a></td>
-                                            <td><a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-success">Güncelle</a></td>
-                                            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
-                                            <td><a href="#" class="btn btn-outline-warning">Sitede Gör</a></td>
-                                        </tr>
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@item.BrandName</td>
+                                        <td>@item.Model</td>
+                                        <td>@item.Transmission</td>
+                                        <td>@item.Km</td>
+                                        <td><a href="/AdminCar/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td><a href="/CarList/CarDetail/@item.CarID" class="btn btn-outline-dark">Detaylar</a></td>
+                                        <td><a href="/CarList/CarDetail/@item.CarID" class="btn btn-outline-dark">Sitede Gör</a></td>
+                                        <td><a href="/CarList/CarDetail/@item.CarID" class="btn btn-outline-secondary">Fiyat Bilgileri</a></td>
+                                    </tr>
                                     }
-                                    
-                                   
                                 </tbody>
                             </table>
                             <a href="/AdminCar/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a>
@@ -61,10 +60,9 @@
                 <!-- end card -->
 
             </div>
-           
+     
         </div>
-   
+        <!-- end page title -->
 
-    </div> 
+    </div> <!-- container-fluid -->
 </div>
-
