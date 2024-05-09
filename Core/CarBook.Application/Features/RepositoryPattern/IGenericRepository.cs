@@ -9,6 +9,7 @@ namespace CarBook.Application.Features.RepositoryPattern
     public interface IGenericRepository<T> where T:class
     {
         List<T> GetAll();
+        List<T> GetCommandByBlogId(int id);
         void Create(T entity);
         void Remove(T entity);
         void Update(T entity);

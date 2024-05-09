@@ -1,0 +1,73 @@
+﻿@model List<ResultAllBlogsWithAuthorDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog Listesi Ve İşlemleri</h4>
+                        <p class="card-subtitle mb-4">
+                           Bloglarala İlgili Sİlme Güncelleme Ekleme Listeleme İşlemleri Burada Gerçekleştirlir.Yeni Blog Ekleme İşlemi Admin Tarafından Yapılmamamktadır. Eğer Blog Ekleme İşlemi Yapmak İsterseniz Sisteme Yazar Olarak Giriş Yapmanız Gerekmektedir.Her Yazar Sadece Bloglarını Düzenleyebilir.Bunun için Uygulamada Login/WriterLogin Sayfası Üzerinden Giriş Yapabilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Yazar</th>
+                                        <th>Kategori</th>
+                                        <th>Tarih </th>
+                                        <th>Açıklama</th>
+
+                                        <th>Kaldır</th>
+                                       
+                                        <th>Blogu Aç</th>
+                                        <th>Yorumlar</th>
+
+                                     
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+
+                                        <tr>
+                                            <th>@count</th>
+                                            <th>@item.title</th>
+                                            <td>@item.authorName</td>
+                                            <td>@item.categoryName</td>
+                                            <td>@item.createdDate</td>
+                                            <td>@item.Description</td>
+                                            <td><a href="/Admin/AdminBlog/RemoveBlog/@item.blogId" class="btn btn-outline-danger">Kaldır</a></td>
+                                            <td><a href="/Blog/BlogDetail//@item.blogId" class="btn btn-outline-success">Blogu  Aç</a></td>
+                                            <td><a href="/Admin/AdminComment/Index/@item.blogId" class="btn btn-outline-dark">Yorumlar</a></td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                           
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
