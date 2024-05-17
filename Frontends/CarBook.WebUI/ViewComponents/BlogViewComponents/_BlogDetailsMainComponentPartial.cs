@@ -23,6 +23,8 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
                 var values = JsonConvert.DeserializeObject<ResultGetBlogById>(jsonData);
                 return View(values);
             }
+           
+
             return View();
 
         }

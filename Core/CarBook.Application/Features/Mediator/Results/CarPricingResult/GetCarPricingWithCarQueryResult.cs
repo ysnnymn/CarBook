@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace CarBook.Application.Features.Mediator.Results.CarPricingResult
 {
     public class GetCarPricingWithCarQueryResult
-    {
+	{
+        public int CarId { get; set; }
         public int CarPricingId { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }

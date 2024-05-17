@@ -19,18 +19,19 @@ namespace CarBook.Application.Features.Mediator.Handlers.CarPricngHandlers
             _repository = repository;
         }
 
-        public async Task<List<GetCarPricingWithCarQueryResult>> Handle(GetCarPricingWithCarQuery request, CancellationToken cancellationToken)
-        {
+		public async Task<List<GetCarPricingWithCarQueryResult>> Handle(GetCarPricingWithCarQuery request, CancellationToken cancellationToken)
+		{
             var values = _repository.GetCarsPricingWithCars();
-            return values.Select(x=>new GetCarPricingWithCarQueryResult
+            return values.Select(x => new GetCarPricingWithCarQueryResult
             {
-                Amount = x.Amount,
-                Brand=x.Car.Brand.Name,
+                Amount=x.Amount,
                 CarPricingId=x.CarPricingID,
+                Brand=x.Car.Brand.Name,
                 CoverImageUrl=x.Car.CoverImageURl,
-                Model=x.Car.Model
+                Model=x.Car.Model,
+                CarId=x.CarID
 
             }).ToList();
-        }
-    }
+		}
+	}
 }
