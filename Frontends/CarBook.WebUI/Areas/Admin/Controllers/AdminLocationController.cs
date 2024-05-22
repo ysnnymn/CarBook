@@ -1,11 +1,12 @@
 ﻿using CarBook.Dto.LoacationDtos;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="Admin")]
     [Area("Admin")]
     [Route("Admin/AdminLocation")]
     public class AdminLocationController : Controller
@@ -19,7 +20,12 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
         [Route("Index")]
         public async Task<IActionResult> Index()
         {
+            var token = User.Claims.FirstOrDefault(x => x.Type == "accessToken")?.Value;
+            if (token!=null)
+            {
+
             var client = _httpClientFactory.CreateClient();
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
             var responseMessage = await client.GetAsync("https://localhost:7239/api/Locations");
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -28,7 +34,10 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 return View(values);
 
             }
-            return View();
+            }
+
+
+                return View();
         }
         [HttpGet]
         [Route("CreateLocation")]
