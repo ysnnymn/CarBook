@@ -10,5 +10,6 @@ namespace CarBook.Application.Features.Mediator.Commands.BlogCommand
         public string CoverImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CategoryId { get; set; }
+        public string Descripiton { get; set; }
     }
 }

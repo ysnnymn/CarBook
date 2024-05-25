@@ -28,8 +28,8 @@
                                         <th>Tarih </th>
                                         <th>Açıklama</th>
 
-                                        <th>Kaldır</th>
-                                       
+                                        <th>Güncelle</th>
+                                        <th>Kaldır</th>   
                                         <th>Blogu Aç</th>
                                         <th>Yorumlar</th>
 
@@ -49,15 +49,18 @@
                                             <td>@item.categoryName</td>
                                             <td>@item.createdDate</td>
                                             <td>@item.Description</td>
+                                            <td><a href="/Admin/AdminBlog/UpdateBlog/@item.blogId" class="btn btn-outline-primary">Güncelle</a></td>
                                             <td><a href="/Admin/AdminBlog/RemoveBlog/@item.blogId" class="btn btn-outline-danger">Kaldır</a></td>
                                             <td><a href="/Blog/BlogDetail//@item.blogId" class="btn btn-outline-success">Blogu  Aç</a></td>
                                             <td><a href="/Admin/AdminComment/Index/@item.blogId" class="btn btn-outline-dark">Yorumlar</a></td>
 
                                         </tr>
                                     }
+                                   
                                 </tbody>
+                              
                             </table>
-                           
+                            <a href="/Admin/AdminBlog/CreateBlog/" class="btn btn-outline-primary">Yeni Blog Girişi</a>
                         </div>
 
                     </div>
