@@ -16,4 +16,8 @@
 <p> HTML-CSS-Bootstrap</p>
 <p>Js</p>
 <p>LINQ</p>
+
+
+
 <h1 id="VeriTabanı">VeriTabanı</h1>
+<p><img src="https://github.com/ysnnymn/CarBook/blob/master/images/veritaban%C4%B1.png?raw=true alt=VeriTabanı"></p>
