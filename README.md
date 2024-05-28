@@ -16,3 +16,4 @@
 <p> HTML-CSS-Bootstrap</p>
 <p>Js</p>
 <p>LINQ</p>
+<h1 id="VeriTabanı">VeriTabanı</h1>
