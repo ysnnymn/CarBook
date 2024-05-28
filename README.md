@@ -5,3 +5,14 @@
 <p>Kullanıcı Arayüzü: Modern ve duyarlı bir tasarıma sahip olan kullanıcı arayüzü, ziyaretçilere araba kiralama işlemlerini etkileyici ve kolay bir şekilde sunar. Şık ve kullanıcı dostu yapısıyla, kullanıcıların ihtiyaç duydukları bilgilere hızlıca ulaşmalarını ve kiralama süreçlerini sorunsuz bir şekilde tamamlamalarını sağlar.</p>
 <h1 id="Projeye'nin Genel amacı">Projeye'nin Genel Amacı</h1>
 <p>Bu projenin amacı, lokasyona göre araç kiralama imkanı sağlamaktır. Kullanıcılar, bulundukları veya araç almak istedikleri lokasyona göre uygun araçları listeleyebilir ve rezervasyon oluşturabilirler. Ayrıca, kullanıcılar blogları görüntüleyebilir ve yorum yapabilirler. Adminler, kendi panellerine erişerek CRUD işlemlerini gerçekleştirebilirler, böylece içerik ve araç bilgilerini kolayca yönetebilirler.</p>
+<h1 id="Kullanılan Teknolojiler ve Uygulamalar">Kullanılan Teknolojiler ve Uygulamalar</h1>
+<p> .NET Core 8.0 MVC ve API</p>
+<p>CQRS, Mediator ve Repository tasarım desenleri</p>
+<p>Onion Architecture ile katmanlı mimari</p>
+<p>Fluent Validation</p>
+<p> JWT (JSON Web Token) </p>
+<p>SignalR</p>
+<p>Microsoft SQL Server (MSSQL) Veritaban</p>
+<p> HTML-CSS-Bootstrap</p>
+<p>Js</p>
+<p>LINQ</p>
